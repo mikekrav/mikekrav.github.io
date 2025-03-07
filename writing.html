@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Kravanja - Writing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: #000;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .logo::after {
+            content: ".";
+            color: #4CAF50;
+        }
+        
+        .nav-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .social-icons a {
+            color: #4CAF50;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #8bc34a;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #4CAF50;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .writing-intro {
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #4CAF50;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .medium-feed {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .medium-feed p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-list {
+            margin-top: 2rem;
+        }
+        
+        .article {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+        
+        .article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-title a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .article-title a:hover {
+            color: #4CAF50;
+        }
+        
+        .article-meta {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 0.8rem;
+        }
+        
+        .article-excerpt {
+            margin-bottom: 0.8rem;
+        }
+        
+        .article-link {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .article-link:hover {
+            color: #333;
+        }
+        
+        pre {
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-left: 4px solid #4CAF50;
+            font-family: monospace;
+            line-height: 1.5;
+        }
+        
+        code {
+            color: #333;
+        }
+        
+        .code-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .back-to-home:hover {
+            color: #4CAF50;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .nav-wrapper {
+                align-items: center;
+            }
+            
+            h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .code-section, .medium-feed {
+                text-align: center;
+            }
+            
+            pre {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Michael Kravanja</div>
+        <div class="nav-wrapper">
+            <div class="social-icons">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Wine"><i class="fas fa-wine-glass"></i></a>
+                <a href="#" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                <a href="#" aria-label="Coffee"><i class="fas fa-mug-hot"></i></a>
+            </div>
+            <nav class="nav-menu">
+                <a href="work.html">Work</a>
+                <a href="projects.html">Projects</a>
+                <a href="#">Writing</a>
+                <a href="me.html">Me</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="writing-intro">
+            <h1>Writing</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor finibus purus, vel blandit neque facilisis nec. Fusce tincidunt velit sem, sed auctor mauris posuere in. Donec semper vitae nisl nec gravida.</p>
+            <p>Aenean bibendum sit amet enim vel facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris vulputate lacus nec ipsum gravida, eu convallis turpis laoreet.</p>
+        </section>
+        
+        <section class="code-section">
+            <h2>How to Add an RSS Feed from Medium</h2>
+            <p>Below is sample code that shows how to fetch and display an RSS feed from a Medium blog. This uses JavaScript to fetch the feed, parse it, and display the articles on your page.</p>
+            
+            <pre><code>// JavaScript code to fetch and display Medium RSS feed
+document.addEventListener('DOMContentLoaded', function() {
+    const mediumRssFeed = 'https://medium.com/feed/@yourusername'; // Replace with your Medium username
+    const rssToJsonApi = 'https://api.rss2json.com/v1/api.json?rss_url=';
+    
+    fetch(rssToJsonApi + encodeURIComponent(mediumRssFeed))
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'ok') {
+                displayArticles(data.items);
+            } else {
+                document.getElementById('medium-articles').innerHTML = 
+                    '&lt;p&gt;Error loading articles. Please check back later.&lt;/p&gt;';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching Medium RSS feed:', error);
+            document.getElementById('medium-articles').innerHTML = 
+                '&lt;p&gt;Error loading articles. Please check back later.&lt;/p&gt;';
+        });
+    
+    function displayArticles(articles) {
+        const container = document.getElementById('medium-articles');
+        let html = '';
+        
+        articles.forEach(article => {
+            // Extract first paragraph as excerpt
+            const content = document.createElement('div');
+            content.innerHTML = article.content;
+            const paragraphs = content.querySelectorAll('p');
+            let excerpt = '';
+            
+            if (paragraphs.length > 0) {
+                excerpt = paragraphs[0].textContent.trim();
+                if (excerpt.length > 150) {
+                    excerpt = excerpt.substring(0, 147) + '...';
+                }
+            }
+            
+            // Format publication date
+            const pubDate = new Date(article.pubDate);
+            const formattedDate = pubDate.toLocaleDateString('en-US', {
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric'
+            });
+            
+            html += `
+                &lt;div class="article"&gt;
+                    &lt;h3 class="article-title"&gt;
+                        &lt;a href="${article.link}" target="_blank"&gt;${article.title}&lt;/a&gt;
+                    &lt;/h3&gt;
+                    &lt;div class="article-meta"&gt;${formattedDate}&lt;/div&gt;
+                    &lt;p class="article-excerpt"&gt;${excerpt}&lt;/p&gt;
+                    &lt;a href="${article.link}" class="article-link" target="_blank"&gt;
+                        Read more
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            `;
+        });
+        
+        container.innerHTML = html;
+    }
+});</code></pre>
+            
+            <p>To use this code, you'll need to:</p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li>Replace <code>yourusername</code> with your actual Medium username</li>
+                <li>Add a div with <code>id="medium-articles"</code> in your HTML where you want the articles to appear</li>
+                <li>The RSS-to-JSON API used in this example has a free tier that should be sufficient for most personal websites</li>
+            </ul>
+        </section>
+        
+        <section class="medium-feed">
+            <h2>My Latest Articles</h2>
+            <p>Below are my most recent articles. The content here is loaded dynamically from my Medium RSS feed using the code shown above.</p>
+            
+            <div id="medium-articles" class="article-list">
+                <!-- Sample preview of what the RSS feed would look like when loaded -->
+                <div class="article">
+                    <h3 class="article-title">
+                        <a href="#">The Future of Web Development in 2025</a>
+                    </h3>
+                    <div class="article-meta">February 15, 2025</div>
+                    <p class="article-excerpt">The web development landscape is constantly evolving, with new frameworks, tools, and paradigms emerging every year. In this article, I explore the most important trends that will shape web development in 2025 and beyond...</p>
+                    <a href="#" class="article-link">Read more</a>
+                </div>
+                
+                <div class="article">
+                    <h3 class="article-title">
+                        <a href="#">Optimizing Your Creative Workflow</a>
+                    </h3>
+                    <div class="article-meta">January 28, 2025</div>
+                    <p class="article-excerpt">After years of refining my approach to creative work, I've discovered several techniques that consistently help me produce better results with less stress. This article shares my personal workflow and the specific tools I use...</p>
+                    <a href="#" class="article-link">Read more</a>
+                </div>
+                
+                <div class="article">
+                    <h3 class="article-title">
+                        <a href="#">The Art of Problem Solving</a>
+                    </h3>
+                    <div class="article-meta">January 10, 2025</div>
+                    <p class="article-excerpt">The ability to solve complex problems effectively is perhaps the most valuable skill in today's rapidly changing world. In this article, I break down the systematic approach I use to tackle difficult challenges...</p>
+                    <a href="#" class="article-link">Read more</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p><strong>Email:</strong> contact@michaelkravanja.com</p>
+        <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+        <a href="index.html" class="back-to-home">← Back to home</a>
+    </footer>
+    
+    <!-- This script would actually fetch your Medium RSS feed in a real implementation -->
+    <script>
+        // In a real implementation, this would be the code shown above
+        // For the demo, we're just showing the static HTML examples
+    </script>
+</body>
+</html>
