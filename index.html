@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Kravanja</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .header {
+            background-color: #000;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .logo::after {
+            content: ".";
+            color: #4CAF50;
+        }
+        
+        .nav-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .social-icons a {
+            color: #4CAF50; /* Green icons */
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #8bc34a;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #4CAF50;
+        }
+        
+        .hero-section {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .diagonal-layout {
+            display: flex;
+            height: 100%;
+            position: relative;
+        }
+        
+        .profile-section {
+            width: 33.33%;
+            background-color: #e9e9e9;
+            padding: 2rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+            z-index: 2;
+        }
+        
+        .image-section {
+            width: 70%;
+            position: absolute;
+            right: 0;
+            height: 100%;
+            background-color: #ddd;
+            clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+        
+        .profile-picture {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-text {
+            text-align: center;
+            max-width: 90%;
+        }
+        
+        .profile-text h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .profile-text p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        
+        .portfolio-section {
+            padding: 4rem 2rem;
+            background-color: #f9f9f9;
+        }
+        
+        .portfolio-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .portfolio-item {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .portfolio-item h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin: 1rem;
+            color: #333;
+        }
+        
+        .portfolio-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.3s;
+        }
+        
+        .portfolio-item a:hover {
+            opacity: 0.9;
+        }
+        
+        .portfolio-item p {
+            margin: 0 1rem 1.5rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f5f5f5;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            color: #000;
+        }
+        
+        .cta-text a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .cta-text a:hover {
+            color: #4CAF50;
+        }
+        
+        .cta-text a span {
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            padding: 2rem;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-details p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+        
+        .contact-details strong {
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .nav-wrapper {
+                align-items: center;
+            }
+            
+            .diagonal-layout {
+                flex-direction: column;
+            }
+            
+            .profile-section, 
+            .image-section {
+                width: 100%;
+                clip-path: none;
+                position: relative;
+            }
+            
+            .profile-section {
+                padding: 3rem 1rem;
+            }
+            
+            .hero-section {
+                height: auto;
+            }
+            
+            .image-section {
+                height: 300px;
+            }
+            
+            .portfolio-container {
+                flex-direction: column;
+            }
+            
+            .portfolio-item {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Michael Kravanja</div>
+        <div class="nav-wrapper">
+            <div class="social-icons">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Wine"><i class="fas fa-wine-glass"></i></a>
+                <a href="#" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                <a href="#" aria-label="Coffee"><i class="fas fa-mug-hot"></i></a>
+            </div>
+            <nav class="nav-menu">
+                <a href="work.html">Work</a>
+                <a href="projects.html">Projects</a>
+                <a href="writing.html">Writing</a>
+                <a href="me.html">Me</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero-section">
+        <div class="diagonal-layout">
+            <div class="profile-section">
+                <div class="profile-picture">
+                    <img src="/api/placeholder/180/180" alt="Michael Kravanja">
+                </div>
+                <div class="profile-text">
+                    <h2>Michael Kravanja</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Mauris vel metus eu orci eleifend accumsan. Nullam eu venenatis diam.</p>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="/api/placeholder/800/500" alt="Hero Image" class="hero-image">
+            </div>
+        </div>
+    </section>
+    
+    <section class="portfolio-section">
+        <div class="portfolio-container">
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <a href="work.html">
+                        <img src="/api/placeholder/350/250" alt="Work">
+                    </a>
+                </div>
+                <h3>Work</h3>
+                <p>Professional experience and qualifications.</p>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <a href="projects.html">
+                        <img src="/api/placeholder/350/250" alt="Projects">
+                    </a>
+                </div>
+                <h3>Projects</h3>
+                <p>Featured work and recent achievements.</p>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <a href="writing.html">
+                        <img src="/api/placeholder/350/250" alt="Writing">
+                    </a>
+                </div>
+                <h3>Writing</h3>
+                <p>Articles, blog posts, and publications.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <p class="cta-text">Still interested? <a href="me.html">Learn more about <span>me</span></a>.</p>
+    </section>
+    
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-details">
+                <p><strong>Email:</strong> contact@michaelkravanja.com</p>
+                <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
