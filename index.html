@@ -30,6 +30,11 @@
             align-items: flex-start;
         }
         
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
@@ -40,6 +45,13 @@
         .logo::after {
             content: ".";
             color: #4CAF50;
+        }
+        
+        .pronunciation {
+            font-size: 1.8rem;
+            font-weight: normal;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         .nav-wrapper {
@@ -67,6 +79,7 @@
         .nav-menu {
             display: flex;
             gap: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .nav-menu a {
@@ -78,6 +91,51 @@
         
         .nav-menu a:hover {
             color: #4CAF50;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .linkedin-btn {
+            background-color: #0077B5; /* LinkedIn blue */
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded corners */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 140px;
+        }
+        
+        .linkedin-btn:hover {
+            background-color: #006097;
+        }
+        
+        .resume-btn {
+            background-color: #4CAF50; /* Green to match the period */
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded corners */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 140px;
+        }
+        
+        .resume-btn:hover {
+            background-color: #3d8b40;
         }
         
         .hero-section {
@@ -279,6 +337,11 @@
                 align-items: center;
             }
             
+            .button-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            
             .diagonal-layout {
                 flex-direction: column;
             }
@@ -316,8 +379,8 @@
     <header class="header">
         <div class="logo-container">
             <div class="logo">Mike Kravanja</div>
-            <div class="pronunciation">(Kra-Vahn-Ya)</div>div>
-    </div>
+            <div class="pronunciation">(Kra-Vahn-Ya)</div>
+        </div>
         <div class="nav-wrapper">
             <nav class="nav-menu">
                 <a href="work.html">Work</a>
@@ -330,7 +393,10 @@
                     <i class="fab fa-linkedin"></i>
                     LinkedIn
                 </a>
-                <a href="resume.pdf" download class="resume-btn">Resume</a>
+                <a href="resume.pdf" download class="resume-btn">
+                    <i class="fas fa-download"></i>
+                    Resume
+                </a>
             </div>
         </div>
     </header>
@@ -343,7 +409,7 @@
                 </div>
                 <div class="profile-text">
                     <h2>Mike Kravanja</h2>
-                    <p>Hey, I’m Mike. A product manager by day, amateur creator, developer, and writer night</p>
+                    <p>Hey, I'm Mike. A product manager by day, amateur creator, developer, and writer night</p>
                     <p>This is my creative portfolio for all work, projects, and articles related to product, design, technology, and branding.</p>
                 </div>
             </div>
