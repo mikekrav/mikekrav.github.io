@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Kravanja - Projects</title>
+    <title>Mike Kravanja - Projects</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
@@ -31,6 +31,11 @@
             align-items: flex-start;
         }
         
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
@@ -43,31 +48,23 @@
             color: #4CAF50;
         }
         
+        .pronunciation {
+            font-size: 1.8rem;
+            font-weight: normal;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
         .nav-wrapper {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
         }
         
-        .social-icons {
-            display: flex;
-            gap: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .social-icons a {
-            color: #4CAF50;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .social-icons a:hover {
-            color: #8bc34a;
-        }
-        
         .nav-menu {
             display: flex;
             gap: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .nav-menu a {
@@ -81,14 +78,59 @@
             color: #4CAF50;
         }
         
+        .button-group {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .linkedin-btn {
+            background-color: #0077B5; /* LinkedIn blue */
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded corners */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 140px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+        }
+        
+        .linkedin-btn:hover {
+            background-color: #006097;
+        }
+        
+        .resume-btn {
+            background-color: #4CAF50; /* Green to match the period */
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded corners */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 140px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+        }
+        
+        .resume-btn:hover {
+            background-color: #3d8b40;
+        }
+        
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
-        }
-        
-        .projects-intro {
-            margin-bottom: 3rem;
         }
         
         h1 {
@@ -96,6 +138,7 @@
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             color: #333;
+            text-align: center;
         }
         
         .project-section {
@@ -185,6 +228,11 @@
                 align-items: center;
             }
             
+            .button-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            
             .project-content {
                 flex-direction: column;
             }
@@ -207,29 +255,32 @@
 </head>
 <body>
     <header class="header">
-        <div class="logo">Michael Kravanja</div>
+        <div class="logo-container">
+            <div class="logo">Mike Kravanja</div>
+            <div class="pronunciation">(Kra-Vahn-Ya)</div>
+        </div>
         <div class="nav-wrapper">
-            <div class="social-icons">
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Wine"><i class="fas fa-wine-glass"></i></a>
-                <a href="#" aria-label="Medium"><i class="fab fa-medium"></i></a>
-                <a href="#" aria-label="Coffee"><i class="fas fa-mug-hot"></i></a>
-            </div>
             <nav class="nav-menu">
                 <a href="work.html">Work</a>
-                <a href="#">Projects</a>
-                <a href="#">Writing</a>
+                <a href="projects.html">Projects</a>
+                <a href="writing.html">Writing</a>
                 <a href="me.html">Me</a>
             </nav>
+            <div class="button-group">
+                <a href="https://www.linkedin.com/in/michael-kravanja/" class="linkedin-btn">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="resume.pdf" download class="resume-btn">
+                    <i class="fas fa-download"></i>
+                    Resume
+                </a>
+            </div>
         </div>
     </header>
     
     <main class="container">
-        <section class="projects-intro">
-            <h1>My Projects</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor finibus purus, vel blandit neque facilisis nec. Fusce tincidunt velit sem, sed auctor mauris posuere in. Donec semper vitae nisl nec gravida.</p>
-            <p>Aenean bibendum sit amet enim vel facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris vulputate lacus nec ipsum gravida, eu convallis turpis laoreet.</p>
-        </section>
+        <h1>My Projects</h1>
         
         <section class="project-section">
             <h2>Project Alpha</h2>
@@ -278,6 +329,3 @@
     </footer>
 </body>
 </html>
-
-
-
