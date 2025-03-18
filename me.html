@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Kravanja - About Me</title>
+    <title>Mike Kravanja - About Me</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
@@ -31,6 +31,11 @@
             align-items: flex-start;
         }
         
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
@@ -43,31 +48,23 @@
             color: #4CAF50;
         }
         
+        .pronunciation {
+            font-size: 1.8rem;
+            font-weight: normal;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
         .nav-wrapper {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
         }
         
-        .social-icons {
-            display: flex;
-            gap: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .social-icons a {
-            color: #4CAF50;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .social-icons a:hover {
-            color: #8bc34a;
-        }
-        
         .nav-menu {
             display: flex;
             gap: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .nav-menu a {
@@ -79,6 +76,55 @@
         
         .nav-menu a:hover {
             color: #4CAF50;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .linkedin-btn {
+            background-color: #0077B5; /* LinkedIn blue */
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded corners */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 140px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+        }
+        
+        .linkedin-btn:hover {
+            background-color: #006097;
+        }
+        
+        .resume-btn {
+            background-color: #4CAF50; /* Green to match the period */
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded corners */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 140px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+        }
+        
+        .resume-btn:hover {
+            background-color: #3d8b40;
         }
         
         .container {
@@ -103,6 +149,7 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
         }
         
         .about-content {
@@ -147,6 +194,86 @@
             background-color: #4CAF50;
         }
         
+        /* Quote Carousel Styles */
+        .quote-carousel {
+            position: relative;
+            padding: 2rem 4rem;
+            margin-top: 2rem;
+        }
+        
+        .quote-slide {
+            display: none;
+            text-align: center;
+            animation: fadeEffect 1s;
+        }
+        
+        .quote-active {
+            display: block;
+        }
+        
+        .quote-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .quote-author {
+            font-weight: 600;
+            color: #4CAF50;
+            font-size: 1rem;
+        }
+        
+        .quote-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+            color: #4CAF50;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 2;
+        }
+        
+        .quote-nav:hover {
+            color: #3d8b40;
+        }
+        
+        .quote-prev {
+            left: 1rem;
+        }
+        
+        .quote-next {
+            right: 1rem;
+        }
+        
+        .quote-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
+        }
+        
+        .quote-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .quote-dot.active {
+            background-color: #4CAF50;
+        }
+        
+        @keyframes fadeEffect {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
+        
         .footer {
             background-color: #f1f1f1;
             text-align: center;
@@ -182,6 +309,11 @@
                 align-items: center;
             }
             
+            .button-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            
             .about-intro {
                 flex-direction: column;
                 align-items: center;
@@ -202,32 +334,48 @@
             .about-section {
                 text-align: center;
             }
+            
+            .quote-carousel {
+                padding: 2rem 3rem;
+            }
+            
+            .quote-text {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo">Michael Kravanja</div>
+        <div class="logo-container">
+            <div class="logo">Mike Kravanja</div>
+            <div class="pronunciation">(Kra-Vahn-Ya)</div>
+        </div>
         <div class="nav-wrapper">
-            <div class="social-icons">
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Wine"><i class="fas fa-wine-glass"></i></a>
-                <a href="#" aria-label="Medium"><i class="fab fa-medium"></i></a>
-                <a href="#" aria-label="Coffee"><i class="fas fa-mug-hot"></i></a>
-            </div>
             <nav class="nav-menu">
-                <a href="index.html">Work</a>
-                <a href="index.html">Projects</a>
-                <a href="index.html">Writing</a>
-                <a href="#">Me</a>
+                <a href="work.html">Work</a>
+                <a href="projects.html">Projects</a>
+                <a href="writing.html">Writing</a>
+                <a href="me.html">Me</a>
             </nav>
+            <div class="button-group">
+                <a href="https://www.linkedin.com/in/michael-kravanja/" class="linkedin-btn">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="resume.pdf" download class="resume-btn">
+                    <i class="fas fa-download"></i>
+                    Resume
+                </a>
+            </div>
         </div>
     </header>
     
     <main class="container">
         <section class="about-intro">
             <div class="profile-image">
-                <img src="/api/placeholder/300/300" alt="Michael Kravanja">
+                <img src="/api/placeholder/300/300" alt="Mike Kravanja">
+                <img src="/api/placeholder/300/200" alt="Secondary Image">
             </div>
             <div class="about-content">
                 <h1>A little bit about me</h1>
@@ -237,27 +385,54 @@
         </section>
         
         <section class="about-section">
-            <h2>My Day Job</h2>
-            <p>Aliquam efficitur nulla ut ante eleifend, eu dictum turpis volutpat. Donec at justo aliquet, faucibus risus quis, vehicula nisi. Suspendisse potenti. Nulla facilisi. Integer suscipit leo in metus condimentum, in varius eros finibus.</p>
-            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer sed leo consectetur, accumsan nulla vel, porta purus. Vestibulum eget fermentum ligula, sit amet dapibus diam. Donec semper dui at enim placerat vehicula.</p>
-        </section>
-        
-        <section class="about-section">
-            <h2>My Interests</h2>
-            <p>Sed consequat tincidunt odio, vel iaculis dolor feugiat id. In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla facilisi. Suspendisse vitae accumsan felis.</p>
-            <p>Aenean tempus, ante ac luctus placerat, ligula risus consectetur lectus, quis tempus nulla dui eget turpis. Nullam eget neque sapien. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-        </section>
-        
-        <section class="about-section">
-            <h2>My Edge</h2>
-            <p>Maecenas placerat tortor vitae lectus faucibus, ac laoreet magna eleifend. Fusce sed augue nec justo lobortis cursus. Integer condimentum magna et dui condimentum, quis ultricies eros viverra. Proin ut justo nibh.</p>
-            <p>Fusce eget placerat mauris. Etiam ultrices turpis quis lorem venenatis, at aliquet lectus interdum. Nullam gravida semper nibh, eu pellentesque lectus tincidunt eu. Pellentesque blandit bibendum ipsum a ornare.</p>
-        </section>
-        
-        <section class="about-section">
-            <h2>My Mantras</h2>
-            <p>Donec rutrum, nisl eget malesuada lobortis, nibh nisl convallis risus, vel rutrum nisi nisi quis neque. Mauris pharetra congue risus, in commodo est fringilla id. Vivamus accumsan dictum urna, non consequat ligula finibus a.</p>
-            <p>Morbi ullamcorper turpis eget nisl pellentesque, id varius nulla fermentum. Nullam consectetur, nisl ac convallis volutpat, lorem risus gravida lectus, id pharetra libero odio id purus. Quisque semper est vel nisl pulvinar vehicula.</p>
+            <h2>Inspiration</h2>
+            <div class="quote-carousel">
+                <div class="quote-slide quote-active">
+                    <p class="quote-text">"The best way to predict the future is to create it."</p>
+                    <p class="quote-author">— Peter Drucker</p>
+                </div>
+                
+                <div class="quote-slide">
+                    <p class="quote-text">"Design is not just what it looks like and feels like. Design is how it works."</p>
+                    <p class="quote-author">— Steve Jobs</p>
+                </div>
+                
+                <div class="quote-slide">
+                    <p class="quote-text">"Simplicity is the ultimate sophistication."</p>
+                    <p class="quote-author">— Leonardo da Vinci</p>
+                </div>
+                
+                <div class="quote-slide">
+                    <p class="quote-text">"Good design is obvious. Great design is transparent."</p>
+                    <p class="quote-author">— Joe Sparano</p>
+                </div>
+                
+                <div class="quote-slide">
+                    <p class="quote-text">"Innovation distinguishes between a leader and a follower."</p>
+                    <p class="quote-author">— Steve Jobs</p>
+                </div>
+                
+                <div class="quote-slide">
+                    <p class="quote-text">"The details are not the details. They make the design."</p>
+                    <p class="quote-author">— Charles Eames</p>
+                </div>
+                
+                <button class="quote-nav quote-prev" onclick="changeQuote(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="quote-nav quote-next" onclick="changeQuote(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="quote-indicators">
+                    <span class="quote-dot active" onclick="currentQuote(1)"></span>
+                    <span class="quote-dot" onclick="currentQuote(2)"></span>
+                    <span class="quote-dot" onclick="currentQuote(3)"></span>
+                    <span class="quote-dot" onclick="currentQuote(4)"></span>
+                    <span class="quote-dot" onclick="currentQuote(5)"></span>
+                    <span class="quote-dot" onclick="currentQuote(6)"></span>
+                </div>
+            </div>
         </section>
     </main>
     
@@ -266,5 +441,38 @@
         <p><strong>Phone:</strong> +1 (123) 456-7890</p>
         <a href="index.html" class="back-to-home">← Back to home</a>
     </footer>
+    
+    <script>
+        let quoteIndex = 1;
+        showQuote(quoteIndex);
+        
+        function changeQuote(n) {
+            showQuote(quoteIndex += n);
+        }
+        
+        function currentQuote(n) {
+            showQuote(quoteIndex = n);
+        }
+        
+        function showQuote(n) {
+            let i;
+            let quotes = document.getElementsByClassName("quote-slide");
+            let dots = document.getElementsByClassName("quote-dot");
+            
+            if (n > quotes.length) {quoteIndex = 1}
+            if (n < 1) {quoteIndex = quotes.length}
+            
+            for (i = 0; i < quotes.length; i++) {
+                quotes[i].classList.remove("quote-active");
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            quotes[quoteIndex-1].classList.add("quote-active");
+            dots[quoteIndex-1].classList.add("active");
+        }
+    </script>
 </body>
 </html>
