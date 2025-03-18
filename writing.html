@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Kravanja - Writing</title>
+    <title>Mike Kravanja - Writing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
@@ -31,6 +31,11 @@
             align-items: flex-start;
         }
         
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
@@ -43,31 +48,23 @@
             color: #4CAF50;
         }
         
+        .pronunciation {
+            font-size: 1.8rem;
+            font-weight: normal;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
         .nav-wrapper {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
         }
         
-        .social-icons {
-            display: flex;
-            gap: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .social-icons a {
-            color: #4CAF50;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .social-icons a:hover {
-            color: #8bc34a;
-        }
-        
         .nav-menu {
             display: flex;
             gap: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .nav-menu a {
@@ -79,6 +76,55 @@
         
         .nav-menu a:hover {
             color: #4CAF50;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .linkedin-btn {
+            background-color: #0077B5; /* LinkedIn blue */
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded corners */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 140px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+        }
+        
+        .linkedin-btn:hover {
+            background-color: #006097;
+        }
+        
+        .resume-btn {
+            background-color: #4CAF50; /* Green to match the period */
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded corners */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 140px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+        }
+        
+        .resume-btn:hover {
+            background-color: #3d8b40;
         }
         
         .container {
@@ -98,61 +144,61 @@
             color: #333;
         }
         
-        section {
-            margin-bottom: 3rem;
-        }
-        
-        h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
+        .writing-intro p {
             margin-bottom: 1rem;
-            color: #333;
-            position: relative;
-            padding-bottom: 0.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
         
-        h2::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: #4CAF50;
+        .articles-section {
+            margin-top: 3rem;
         }
         
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        .medium-feed {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .medium-feed p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .article-list {
+        .articles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
         
-        .article {
-            border-bottom: 1px solid #eee;
-            padding: 1.5rem 0;
+        .article-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
         
-        .article:last-child {
-            border-bottom: none;
+        .article-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .article-card:hover .article-image img {
+            transform: scale(1.05);
+        }
+        
+        .article-content {
+            padding: 1.5rem;
         }
         
         .article-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
+            line-height: 1.3;
         }
         
         .article-title a {
@@ -165,48 +211,39 @@
             color: #4CAF50;
         }
         
-        .article-meta {
-            font-size: 0.9rem;
+        .article-date {
             color: #777;
+            font-size: 0.9rem;
             margin-bottom: 0.8rem;
+            display: block;
         }
         
         .article-excerpt {
-            margin-bottom: 0.8rem;
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         
-        .article-link {
+        .read-more {
+            display: inline-block;
             color: #4CAF50;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: 500;
             transition: color 0.3s;
         }
         
-        .article-link:hover {
-            color: #333;
+        .read-more:hover {
+            color: #3d8b40;
         }
         
-        pre {
-            background-color: #f5f5f5;
-            border-radius: 4px;
-            padding: 1.5rem;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-            border-left: 4px solid #4CAF50;
-            font-family: monospace;
-            line-height: 1.5;
-        }
-        
-        code {
-            color: #333;
-        }
-        
-        .code-section {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
+        .medium-icon {
+            display: inline-block;
+            margin-left: 5px;
+            font-size: 0.9rem;
         }
         
         .footer {
@@ -244,156 +281,87 @@
                 align-items: center;
             }
             
-            h2::after {
-                left: 50%;
-                transform: translateX(-50%);
+            .button-group {
+                flex-direction: column;
+                width: 100%;
             }
             
-            .code-section, .medium-feed {
-                text-align: center;
-            }
-            
-            pre {
-                text-align: left;
+            .articles-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo">Michael Kravanja</div>
+        <div class="logo-container">
+            <div class="logo">Mike Kravanja</div>
+            <div class="pronunciation">(Kra-Vahn-Ya)</div>
+        </div>
         <div class="nav-wrapper">
-            <div class="social-icons">
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Wine"><i class="fas fa-wine-glass"></i></a>
-                <a href="#" aria-label="Medium"><i class="fab fa-medium"></i></a>
-                <a href="#" aria-label="Coffee"><i class="fas fa-mug-hot"></i></a>
-            </div>
             <nav class="nav-menu">
                 <a href="work.html">Work</a>
                 <a href="projects.html">Projects</a>
-                <a href="#">Writing</a>
+                <a href="writing.html">Writing</a>
                 <a href="me.html">Me</a>
             </nav>
+            <div class="button-group">
+                <a href="https://www.linkedin.com/in/michael-kravanja/" class="linkedin-btn">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="resume.pdf" download class="resume-btn">
+                    <i class="fas fa-download"></i>
+                    Resume
+                </a>
+            </div>
         </div>
     </header>
     
     <main class="container">
         <section class="writing-intro">
-            <h1>Writing</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor finibus purus, vel blandit neque facilisis nec. Fusce tincidunt velit sem, sed auctor mauris posuere in. Donec semper vitae nisl nec gravida.</p>
-            <p>Aenean bibendum sit amet enim vel facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris vulputate lacus nec ipsum gravida, eu convallis turpis laoreet.</p>
+            <h1>My Writing</h1>
+            <p>I write about product, branding, design, and technology—along with the occasional deep dive into AI and community building.</p>
+            <p>For years, I told myself I'd start writing and sharing my thoughts with like-minded people. But somehow, that goal kept slipping off my New Year's resolutions list. In 2025, I finally made the commitment: at least one blog post per month on the topics I love.</p>
+            <p>While I don't have the biggest audience (yet), and some posts may disappear into the void of the internet, I've found real value in the process—thinking deeply, refining my ideas, and sharpening my writing skills along the way.</p>
+            <p>Check out my articles below, and if something resonates (or totally misses the mark), feel free to comment or applaud. I'm always up for a good discussion.</p>
         </section>
         
-        <section class="code-section">
-            <h2>How to Add an RSS Feed from Medium</h2>
-            <p>Below is sample code that shows how to fetch and display an RSS feed from a Medium blog. This uses JavaScript to fetch the feed, parse it, and display the articles on your page.</p>
-            
-            <pre><code>// JavaScript code to fetch and display Medium RSS feed
-document.addEventListener('DOMContentLoaded', function() {
-    const mediumRssFeed = 'https://medium.com/feed/@yourusername'; // Replace with your Medium username
-    const rssToJsonApi = 'https://api.rss2json.com/v1/api.json?rss_url=';
-    
-    fetch(rssToJsonApi + encodeURIComponent(mediumRssFeed))
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'ok') {
-                displayArticles(data.items);
-            } else {
-                document.getElementById('medium-articles').innerHTML = 
-                    '&lt;p&gt;Error loading articles. Please check back later.&lt;/p&gt;';
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching Medium RSS feed:', error);
-            document.getElementById('medium-articles').innerHTML = 
-                '&lt;p&gt;Error loading articles. Please check back later.&lt;/p&gt;';
-        });
-    
-    function displayArticles(articles) {
-        const container = document.getElementById('medium-articles');
-        let html = '';
-        
-        articles.forEach(article => {
-            // Extract first paragraph as excerpt
-            const content = document.createElement('div');
-            content.innerHTML = article.content;
-            const paragraphs = content.querySelectorAll('p');
-            let excerpt = '';
-            
-            if (paragraphs.length > 0) {
-                excerpt = paragraphs[0].textContent.trim();
-                if (excerpt.length > 150) {
-                    excerpt = excerpt.substring(0, 147) + '...';
-                }
-            }
-            
-            // Format publication date
-            const pubDate = new Date(article.pubDate);
-            const formattedDate = pubDate.toLocaleDateString('en-US', {
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric'
-            });
-            
-            html += `
-                &lt;div class="article"&gt;
-                    &lt;h3 class="article-title"&gt;
-                        &lt;a href="${article.link}" target="_blank"&gt;${article.title}&lt;/a&gt;
-                    &lt;/h3&gt;
-                    &lt;div class="article-meta"&gt;${formattedDate}&lt;/div&gt;
-                    &lt;p class="article-excerpt"&gt;${excerpt}&lt;/p&gt;
-                    &lt;a href="${article.link}" class="article-link" target="_blank"&gt;
-                        Read more
-                    &lt;/a&gt;
-                &lt;/div&gt;
-            `;
-        });
-        
-        container.innerHTML = html;
-    }
-});</code></pre>
-            
-            <p>To use this code, you'll need to:</p>
-            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                <li>Replace <code>yourusername</code> with your actual Medium username</li>
-                <li>Add a div with <code>id="medium-articles"</code> in your HTML where you want the articles to appear</li>
-                <li>The RSS-to-JSON API used in this example has a free tier that should be sufficient for most personal websites</li>
-            </ul>
-        </section>
-        
-        <section class="medium-feed">
-            <h2>My Latest Articles</h2>
-            <p>Below are my most recent articles. The content here is loaded dynamically from my Medium RSS feed using the code shown above.</p>
-            
-            <div id="medium-articles" class="article-list">
-                <!-- Sample preview of what the RSS feed would look like when loaded -->
-                <div class="article">
-                    <h3 class="article-title">
-                        <a href="#">The Future of Web Development in 2025</a>
-                    </h3>
-                    <div class="article-meta">February 15, 2025</div>
-                    <p class="article-excerpt">The web development landscape is constantly evolving, with new frameworks, tools, and paradigms emerging every year. In this article, I explore the most important trends that will shape web development in 2025 and beyond...</p>
-                    <a href="#" class="article-link">Read more</a>
-                </div>
+        <section class="articles-section">
+            <div class="articles-container">
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://miro.medium.com/v2/resize:fill:224:224/1*vWGjpW3H-5Mo27YpQWqI3Q.jpeg" alt="Products I Love in 2025: Elevate">
+                    </div>
+                    <div class="article-content">
+                        <h2 class="article-title">
+                            <a href="https://medium.com/@mikekravanja/products-i-love-in-2025-elevate-b5755ce36be7" target="_blank">Products I Love in 2025: Elevate</a>
+                        </h2>
+                        <span class="article-date">Mar 18, 2025</span>
+                        <p class="article-excerpt">A deep dive into Elevate, a productivity app that's changed how I work in 2025. This review explores its key features, UI design, and why it stands out in a crowded market.</p>
+                        <a href="https://medium.com/@mikekravanja/products-i-love-in-2025-elevate-b5755ce36be7" target="_blank" class="read-more">
+                            Read on Medium
+                            <span class="medium-icon"><i class="fab fa-medium"></i></span>
+                        </a>
+                    </div>
+                </article>
                 
-                <div class="article">
-                    <h3 class="article-title">
-                        <a href="#">Optimizing Your Creative Workflow</a>
-                    </h3>
-                    <div class="article-meta">January 28, 2025</div>
-                    <p class="article-excerpt">After years of refining my approach to creative work, I've discovered several techniques that consistently help me produce better results with less stress. This article shares my personal workflow and the specific tools I use...</p>
-                    <a href="#" class="article-link">Read more</a>
-                </div>
-                
-                <div class="article">
-                    <h3 class="article-title">
-                        <a href="#">The Art of Problem Solving</a>
-                    </h3>
-                    <div class="article-meta">January 10, 2025</div>
-                    <p class="article-excerpt">The ability to solve complex problems effectively is perhaps the most valuable skill in today's rapidly changing world. In this article, I break down the systematic approach I use to tackle difficult challenges...</p>
-                    <a href="#" class="article-link">Read more</a>
-                </div>
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://miro.medium.com/v2/resize:fill:224:224/1*TYL4SZN8PVASTDc8QN8kmA.jpeg" alt="I Met My 60-Year-Old Self With AI: Did My Life Go As Planned?">
+                    </div>
+                    <div class="article-content">
+                        <h2 class="article-title">
+                            <a href="https://medium.com/@mikekravanja/i-met-my-60-year-old-self-with-ai-did-my-life-go-as-planned-9a379a7fede3" target="_blank">I Met My 60-Year-Old Self With AI: Did My Life Go As Planned?</a>
+                        </h2>
+                        <span class="article-date">Feb 25, 2025</span>
+                        <p class="article-excerpt">An exploration of identity, aging, and technology as I used AI to simulate a conversation with my future self. The insights were both surprising and profound.</p>
+                        <a href="https://medium.com/@mikekravanja/i-met-my-60-year-old-self-with-ai-did-my-life-go-as-planned-9a379a7fede3" target="_blank" class="read-more">
+                            Read on Medium
+                            <span class="medium-icon"><i class="fab fa-medium"></i></span>
+                        </a>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
@@ -403,11 +371,5 @@ document.addEventListener('DOMContentLoaded', function() {
         <p><strong>Phone:</strong> +1 (123) 456-7890</p>
         <a href="index.html" class="back-to-home">← Back to home</a>
     </footer>
-    
-    <!-- This script would actually fetch your Medium RSS feed in a real implementation -->
-    <script>
-        // In a real implementation, this would be the code shown above
-        // For the demo, we're just showing the static HTML examples
-    </script>
 </body>
 </html>
