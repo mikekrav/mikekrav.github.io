@@ -238,8 +238,7 @@
         .awards-image {
             flex: 1;
             min-width: 300px;
-            background-color: #f0f0f0;
-            border-radius: 8px;
+            border-radius: 6px;
             height: 300px;
             display: flex;
             align-items: center;
@@ -250,6 +249,9 @@
         .awards-image img {
             max-width: 100%;
             height: auto;
+            object-fit: cover;
+            object-position: center; 
+            
         }
         
         @media (max-width: 768px) {
