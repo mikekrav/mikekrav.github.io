@@ -199,6 +199,59 @@
             color: #4CAF50;
         }
         
+        /* New CSS for checkmark bullets */
+        ul.checkmark {
+            list-style: none;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        ul.checkmark li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        ul.checkmark li::before {
+            content: "\f00c"; /* FontAwesome checkmark */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #4CAF50;
+        }
+        
+        /* Awards section layout */
+        .awards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        
+        .awards-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .awards-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .awards-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -222,6 +275,10 @@
             h2::after {
                 left: 50%;
                 transform: translateX(-50%);
+            }
+            
+            .awards-container {
+                flex-direction: column;
             }
         }
     </style>
@@ -250,7 +307,7 @@
                     LinkedIn
                 </a>
                <a href="MichaelKravanja_ProductManager_Resume.pdf" download="MichaelKravanja_ProductManager_Resume.pdf" class="resume-btn">
-    <i class="fas fa-download"></i> Download Resume
+    <i class="fas fa-download"></i> Resume
 </a>
             </div>
         </div>
@@ -258,17 +315,35 @@
     
     <main class="container">
         
-        <section class="My Work">
-            <h2></h2>
-            <p>I’m a results-driven Product Manager with 6+ years of experience leading cross-functional teams to build and scale digital products. My expertise spans growth strategy, AI-driven solutions, UX optimization, and data analytics, with a strong focus on enhancing customer experiences and driving business impact.</p>
+        <section class="work-section">
+            <h2>My Product Career</h2>
+            <p>I'm a results-driven Product Manager with 6+ years of experience leading cross-functional teams to build and scale digital products. My expertise spans growth strategy, AI-driven solutions, UX optimization, and data analytics, with a strong focus on enhancing customer experiences and driving business impact.</p>
             <p>I have led product initiatives across consumer lending, AI-powered chatbots, and digital transformation projects, overseeing end-to-end product roadmaps, A/B testing, and large-scale platform migrations. My work has included:</p>
-           <ul>
+           <ul class="checkmark">
                <li>Launching and optimizing consumer-facing products, improving acquisition funnels, and enhancing payment experiences.</li>
                <li>Spearheading AI-driven initiatives, leveraging automation and data insights to improve decision-making and user engagement.</li>
                <li>Leading strategic growth projects, expanding partnerships, and optimizing digital experiences to increase customer conversion and retention.</li>
                <li>Driving UX and platform modernization, improving self-service capabilities and streamlining user interactions across mobile and web.</li>
            </ul>
+            
             <p>Passionate about problem-solving, user-centered design, and data-driven decision-making, I thrive at the intersection of technology, business strategy, and customer experience.</p>
+            
+            <h3><strong>Awards</strong></h3>
+            
+            <div class="awards-container">
+                <div class="awards-content">
+                    <p>I have had the priviledge of leading and contributing to industry recognized products, including:</p>
+                    <ul class="checkmark">
+                        <li>Citi Personal Loan - Ranked 3rd (730 CSAT) - <a href="https://www.jdpower.com/business/press-releases/2024-us-consumer-lending-satisfaction-study">JD Power Consumer Loan Satisfaction Survey.</a></li>
+                        <li>Citi Flex Pay - Ranked 3rd (676 CSAT) - <a href="https://www.jdpower.com/business/press-releases/2024-us-buy-now-pay-later-satisfaction-study">JD Power Buy Now Pay Later Customer Satisfaction Survey.</a></li>
+                        <li>Citi Mobile - recognized by Forbes as one of its <a href="https://www.citi.com/banking/citi-mobile-app-download/landing?linkId=549608733">top mobile banking app.</a></li>
+                    </ul>
+                </div>
+                <div class="awards-image">
+                    <!-- Insert your image here -->
+                    <img src="INSERT_IMAGE_PATH_HERE" alt="Awards & Recognition">
+                </div>
+            </div>
         </section>
         
     </main>
