@@ -133,6 +133,36 @@
             padding: 2rem;
         }
         
+        /* Page header styles */
+        .page-header {
+            margin-bottom: 2rem;
+        }
+        
+        .page-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .page-header h1::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #4CAF50;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+        }
+        
         /* Carousel Styles */
         .carousel-container {
             position: relative;
@@ -325,6 +355,19 @@
                 margin-bottom: 1.5rem;
             }
             
+            .page-header h1 {
+                text-align: center;
+            }
+            
+            .page-header h1::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .page-header p {
+                text-align: center;
+            }
+            
             h2 {
                 text-align: center;
             }
@@ -366,6 +409,12 @@
     </header>
     
     <main class="container">
+        <!-- Added page header section -->
+        <section class="page-header">
+            <h1>My Projects</h1>
+            <p>Beyond my professional work, I enjoy building projects that expand my skills and solve interesting problems. Here's a showcase of some of my favorite personal projects.</p>
+        </section>
+        
         <div class="carousel-container">
             
             <button class="carousel-btn prev">
@@ -463,8 +512,8 @@
     </main>
     
     <footer class="footer">
-        <p><strong>Email:</strong> contact@michaelkravanja.com</p>
-        <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+        <p><strong>Email:</strong> m.kravanja5@gmail.com</p>
+        <p><strong>Phone:</strong> +1 (732) 300-8391</p>
         <a href="index.html" class="back-to-home">← Back to home</a>
     </footer>
 
@@ -521,28 +570,6 @@
                     }
                 });
             }
-            
-            // Auto-play functionality (uncomment to enable)
-            /*
-            const autoPlayInterval = 5000; // 5 seconds
-            let intervalId = setInterval(() => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateCarousel();
-            }, autoPlayInterval);
-            
-            // Pause auto-play on hover
-            document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
-                clearInterval(intervalId);
-            });
-            
-            // Resume auto-play when mouse leaves
-            document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
-                intervalId = setInterval(() => {
-                    currentIndex = (currentIndex + 1) % slides.length;
-                    updateCarousel();
-                }, autoPlayInterval);
-            });
-            */
             
             // Add keyboard navigation
             document.addEventListener('keydown', (e) => {
