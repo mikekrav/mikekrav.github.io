@@ -174,10 +174,11 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        /* New style for secondary image container */
+        /* Style for secondary image container */
         .secondary-image-container {
             width: 100%;
             margin-bottom: 2rem;
+            margin-top: 2rem;
             text-align: center;
         }
         
@@ -185,6 +186,7 @@
             max-width: 600px;
             height: auto;
             border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
         
         h2 {
@@ -364,7 +366,6 @@
 <body>
    <header class="header">
         <div class="logo-container">
-            <!-- CHANGE 3: Added links to the name and pronunciation to navigate to home page -->
             <a href="index.html" style="text-decoration: none;">
                 <div class="logo">Mike Kravanja</div>
             </a>
@@ -393,7 +394,6 @@
     
     <main class="container">
         <section class="about-intro">
-            <!-- CHANGE 1: Made the profile image div contain only the first image -->
             <div class="profile-image">
                 <img src="about-me.png" alt="Mike Kravanja">
             </div>
@@ -408,11 +408,6 @@
                 <p>If you're interested in learning more about me or my work, I'd love to connect. </p>
             </div>
         </section>
-        
-        <!-- CHANGE 2: Added new container for second image, positioned horizontally between sections -->
-        <div class="secondary-image-container">
-            <img src="about-me2.png" alt="Secondary Image">
-        </div>
         
         <section class="about-section">
             <h2>Inspiration</h2>
@@ -464,6 +459,11 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Moved the secondary image container here, below the quote section -->
+        <div class="secondary-image-container">
+            <img src="about-me2.png" alt="Secondary Image">
+        </div>
     </main>
     
     <footer class="footer">
